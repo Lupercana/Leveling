@@ -5,11 +5,11 @@ using UnityEngine;
 public class Script_Dont_Destroy : MonoBehaviour
 {
     [SerializeField]
-    private string tag = null;
+    private string tag_to_find = "";
 
     private void Awake()
     {
-        GameObject[] objs = GameObject.FindGameObjectsWithTag(tag);
+        GameObject[] objs = GameObject.FindGameObjectsWithTag(tag_to_find);
 
         if (objs.Length > 1)
         {
