@@ -5,29 +5,34 @@ using UnityEngine;
 public class Script_Enemy : MonoBehaviour
 {
     [SerializeField]
-    private GameObject ref_to_track;
+    private GameObject ref_to_track = null;
 
     [SerializeField]
-    private float speed;
+    private float initial_speed = 0;
 
-    private Rigidbody2D self_rbody;
+    // Rbody is too slow
+    //private Rigidbody2D self_rbody;
 
     private void Awake()
     {
-        self_rbody = this.GetComponent<Rigidbody2D>();
+        //self_rbody = this.GetComponent<Rigidbody2D>();
+    }
+
+    private void Start()
+    {
+        if (ref_to_track == null)
+        {
+            ref_to_track = GameObject.FindGameObjectWithTag("Player");
+        }
     }
 
     private void Update()
     {
-        float step = speed * Time.deltaTime;
+        float step = initial_speed * Time.deltaTime;
 
-        Vector2 move = Vector2.MoveTowards(self_rbody.transform.position, ref_to_track.transform.position, step);
+        Vector2 move = Vector2.MoveTowards(this.transform.position, ref_to_track.transform.position, step);
 
-        self_rbody.MovePosition(move);
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        
+        this.transform.position = new Vector3(move.x, move.y, 0);
+        //self_rbody.MovePosition(move);
     }
 }

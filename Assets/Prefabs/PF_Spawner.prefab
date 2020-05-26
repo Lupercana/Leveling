@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8591620485588034652}
   - component: {fileID: 5242696332283675363}
+  - component: {fileID: 6901038719802186192}
   m_Layer: 0
   m_Name: PF_Spawner
   m_TagString: Untagged
@@ -57,3 +58,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6901038719802186192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2755040159742040616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06e414abe0c434147b5c8e32af3794b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ref_spawn_type: {fileID: 5711097732393784751, guid: 2845ebda5761e354ab683099a2d1ae9b,
+    type: 3}
+  max_spawns_on_screen: 250
