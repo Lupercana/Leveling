@@ -363,9 +363,9 @@ GameObject:
   - component: {fileID: 711505861}
   - component: {fileID: 711505860}
   - component: {fileID: 711505859}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Obj_Walls
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -775,7 +775,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9dc258406abc9f4399e4348ac7e4456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1000
+  ref_bullet: {fileID: 3337150146831050864, guid: 690a8d15f75728b47b2d41e047b2e133,
+    type: 3}
+  movement_speed: 1000
+  shot_speed: 15
 --- !u!212 &6238037436054347057
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -861,7 +864,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!1 &6238037436054347061
 GameObject:
@@ -876,7 +879,7 @@ GameObject:
   - component: {fileID: 6238037436054347056}
   - component: {fileID: 6238037436054347059}
   - component: {fileID: 6238037436054347058}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Obj_Player
   m_TagString: Player
   m_Icon: {fileID: 0}

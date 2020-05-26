@@ -8,14 +8,16 @@ public class Script_Enemy : MonoBehaviour
     private GameObject ref_to_track = null;
 
     [SerializeField]
+    private string tag_destroy = "";
+
+    [SerializeField]
     private float initial_speed = 0;
 
-    // Rbody is too slow
-    //private Rigidbody2D self_rbody;
+    private Rigidbody2D self_rbody;
 
     private void Awake()
     {
-        //self_rbody = this.GetComponent<Rigidbody2D>();
+        self_rbody = this.GetComponent<Rigidbody2D>();
     }
 
     private void Start()
@@ -30,9 +32,17 @@ public class Script_Enemy : MonoBehaviour
     {
         float step = initial_speed * Time.deltaTime;
 
-        Vector2 move = Vector2.MoveTowards(this.transform.position, ref_to_track.transform.position, step);
+        Vector3 move = Vector3.MoveTowards(this.transform.position, ref_to_track.transform.position, step);
 
-        this.transform.position = new Vector3(move.x, move.y, 0);
-        //self_rbody.MovePosition(move);
+        self_rbody.MovePosition(move);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == tag_destroy)
+        {
+            Destroy(collision.gameObject);
+            Destroy(this.gameObject);
+        }
     }
 }
