@@ -777,8 +777,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ref_bullet: {fileID: 3337150146831050864, guid: 690a8d15f75728b47b2d41e047b2e133,
     type: 3}
+  tag_enemy: Enemy
   movement_speed: 1000
+  max_health: 100
+  enemy_damage: 5
   shot_speed: 15
+  shot_cd_seconds: 0.1
+  hit_cd_seconds: 0.5
 --- !u!212 &6238037436054347057
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -819,7 +824,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 574f74ab02721a54d9f0610c8c710f27, type: 3}
-  m_Color: {r: 0, g: 0.7911868, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
