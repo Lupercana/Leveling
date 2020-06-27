@@ -28,9 +28,9 @@ public class Script_Enemy : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        float step = initial_speed * Time.deltaTime;
+        float step = initial_speed * Time.fixedDeltaTime;
 
         Vector3 move = Vector3.MoveTowards(this.transform.position, ref_to_track.transform.position, step);
 

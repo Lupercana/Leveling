@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Script_Player_Movement : MonoBehaviour
+public class Script_Player_Behavior : MonoBehaviour
 {
     [SerializeField]
     private GameObject ref_bullet = null;
@@ -29,7 +29,6 @@ public class Script_Player_Movement : MonoBehaviour
     private void Awake()
     {
         ref_rbody = this.GetComponent<Rigidbody2D>();
-
     }
 
     private void Start()
@@ -76,6 +75,7 @@ public class Script_Player_Movement : MonoBehaviour
                 if (elapsed_time > hit_cd_seconds)
                 {
                     current_health -= enemy_damage;
+                    this.GetComponent<Script_Effect_Resize>().TriggerResize();
                     if (current_health < 0)
                     {
                         current_health = 0;

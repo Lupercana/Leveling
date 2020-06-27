@@ -99,7 +99,7 @@ MonoBehaviour:
   ref_to_track: {fileID: 6238037436097527965, guid: a6841470d79f60a4fa886b16da35f376,
     type: 3}
   tag_destroy: Bullet_Player
-  initial_speed: 5
+  initial_speed: 1
 --- !u!58 &5711097732393784739
 CircleCollider2D:
   m_ObjectHideFlags: 0
