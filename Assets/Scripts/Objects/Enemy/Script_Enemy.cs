@@ -6,10 +6,10 @@ public class Script_Enemy : MonoBehaviour
 {
     [SerializeField]
     private GameObject ref_to_track = null;
-
+    [SerializeField]
+    private GameObject ref_particle_death = null;
     [SerializeField]
     private string tag_destroy = "";
-
     [SerializeField]
     private float initial_speed = 0;
 
@@ -42,6 +42,14 @@ public class Script_Enemy : MonoBehaviour
         if (collision.collider.tag == tag_destroy)
         {
             Destroy(collision.gameObject);
+
+            // Play particle emission
+            var inst = Instantiate(ref_particle_death, this.transform.position, Quaternion.identity);
+            Script_Particle_One_Shot script_particle = inst.GetComponent<Script_Particle_One_Shot>();
+            script_particle.SetColor(this.GetComponent<SpriteRenderer>().color);
+            script_particle.SetScale(this.transform.localScale.x, this.transform.localScale.y);
+            script_particle.Play();
+
             Destroy(this.gameObject);
         }
     }

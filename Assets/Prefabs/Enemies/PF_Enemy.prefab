@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5711097732393784751}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.65, y: -1.26, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -97,6 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ref_to_track: {fileID: 6238037436097527965, guid: a6841470d79f60a4fa886b16da35f376,
+    type: 3}
+  ref_particle_death: {fileID: 3951744094403241036, guid: 7b03b4b5187f6b0468f13d32eeaf8522,
     type: 3}
   tag_destroy: Bullet_Player
   initial_speed: 1
