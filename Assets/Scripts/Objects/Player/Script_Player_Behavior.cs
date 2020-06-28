@@ -63,8 +63,8 @@ public class Script_Player_Behavior : MonoBehaviour
             last_shot_time = Time.time;
         }
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.collider.tag == tag_enemy)
         {
